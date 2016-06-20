@@ -12,6 +12,7 @@
 
 - (NSArray *)getNextYearsEvents;
 - (NSArray *)getLastYearsEvents;
+
 - (void)requestCalendarPermission;
 
 @end

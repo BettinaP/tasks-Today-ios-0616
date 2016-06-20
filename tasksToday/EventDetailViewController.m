@@ -14,22 +14,51 @@
 
 @implementation EventDetailViewController
 
+
+
 -(void)viewWillAppear:(BOOL)animated{
 
     NSMutableString *eachTitle = [[NSMutableString alloc]init];
-    for (EKEvent *event in self.yearlyEvents){
+    
+    for(NSUInteger i = 0; i<[self.yearlyEvents count]; i++){
+        EKEvent *event = self.yearlyEvents[i];
         
-        if (self.yearlyEvents[0]){
-        [eachTitle appendFormat:@"%@", event.title];
-        }else{
-            
-            [eachTitle appendFormat:@"\n%@", event.title];
+        if (i == [self.yearlyEvents count]-1){
+            [eachTitle appendFormat:@"%@", event.title];
         }
-        
+        else {
+            [eachTitle appendFormat:@"%@\n", event.title];
+        }
+    
     }
+    
+    
+//    for (EKEvent *event in self.yearlyEvents){
+//        
+//        if (self.yearlyEvents.count == 1){
+    
+//        [eachTitle appendFormat:@"%@", event.title];
+//            
+//        }else{
+//            
+//            // Get index of current event
+//            NSUInteger index = [self.yearlyEvents indexOfObject:event];
+//            
+//            // If the index is equal to the count of the array minus one, then it's the last one, then no line break is needed
+    //        if (index == self.yearlyEvents.count - 1) {
+//                [eachTitle appendFormat:@"%@", event.title];
+//            } else {
+//                [eachTitle appendFormat:@"%@\n", event.title];
+//            }
+//            
+//        }
+//        
+    
     self.titleForLists.text = eachTitle;
     
 }
+
+
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
 //    // Do any additional setup after loading the view.

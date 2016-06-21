@@ -31,6 +31,7 @@
         }
     
     }
+    self.titleForLists.text = eachTitle;
     
     
 //    for (EKEvent *event in self.yearlyEvents){
@@ -54,7 +55,6 @@
 //        }
 //        
     
-    self.titleForLists.text = eachTitle;
     
 }
 
